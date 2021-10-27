@@ -10,7 +10,7 @@ class Persona:
         self.edad = edad
         self.nacionalidad = nacionalidad
         self.listaMonedas = []
-        self.historial = []
+        self.historial = [] #array de Transacciones
     
 
     def verifyCripto(self,moneda):
@@ -34,11 +34,20 @@ class Persona:
 
 
     def mostrarInfo(self):
-
+        print("- - - - - - - - - - - - - - - - - - ")
         print("{}".format(self.nombre))
         print("{}".format(self.id))
         print("{}".format(self.edad))
         print("{}".format(self.nacionalidad))
+        print("- - - - - - - - - - - - - - - - - - ")
+
+    def infoTrans(self):
+        print("- - - - - - - - - - - - - - - - - - ")
+        print("nombre : {}".format(self.nombre))
+        print("Edad :{}".format(self.edad))
+        print("Nacionalidad : {}".format(self.nacionalidad))
+        print("- - - - - - - - - - - - - - - - - - ")
+
 
     def agregarMoneda(self,moneda,cantidad):
         #debemos verificar la moneda
@@ -84,6 +93,10 @@ class Persona:
         else:
             moneda = Criptomoneda(moneda, cantidad)
             self.listaMonedas.append(moneda)
+    
+
+    def addToHistorial(self,transaccion):
+        self.historial.append(transaccion)
 
         
 
